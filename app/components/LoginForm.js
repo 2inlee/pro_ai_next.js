@@ -10,15 +10,12 @@ const LoginForm = () => {
     const formData = new FormData(event.target);
 
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await axios.post('http://localhost:5001/signup', formData);
 
-      if (response.ok) {
-        alert('Login Success!!')
+      if (response.data.result === 'success') {
+        alert('로그인이 성공적으로 완료되었습니다.');
       } else {
-        alert('Login Fail!!')
+        alert('Login Fail');
       }
     } catch (error) {
       console.error(error);

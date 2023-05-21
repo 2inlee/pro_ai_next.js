@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const SignupForm = () => {
-  const [user, setUsername] = useState('');
+  const [name, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,17 +15,20 @@ const SignupForm = () => {
         name,
         email,
         password,
-        confirm_password: confirmPassword
       };
 
       // Send the POST request to the server using axios
       const response = await axios.post('http://localhost:5001/signup', formData);
 
-      console.log(response.data);
-      alert('Signup successful!');
+      // json 형태로 'result':'success'를 받아오면 회원가입 성공
+      if (response.data.result === 'success') {
+        alert('회원가입이 성공적으로 완료되었습니다.');
+      } else {
+        alert('Signup Fail!!');
+      }
     } catch (error) {
       console.error(error);
-      alert('Signup failed!');
+      // Handle any errors that occurred during the signup process
     }
   };
 
@@ -34,13 +36,13 @@ const SignupForm = () => {
     <div className="container mt-5">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="user">Username:</label>
+          <label htmlFor="name">Username:</label>
           <input
             type="text"
             className="form-control"
-            id="user"
-            name="user"
-            value={user}
+            id="name"
+            name="name"
+            value={name}
             onChange={(e) => setUsername(e.target.value)}
             required
           />
@@ -76,8 +78,6 @@ const SignupForm = () => {
             className="form-control"
             id="confirm_password"
             name="confirm_password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>
