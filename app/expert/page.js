@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import Expert from '../components/Expert';
+import SurveyForm from '../components/SurveyForm';
 
 const ExpertPage = () => {
   return (
     <div>
-      <Expert/>
+      <SurveyForm/>
     </div>
   );
 };
