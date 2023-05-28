@@ -24,7 +24,7 @@ const SurveyForm = () => {
 
     // Submit survey to the Flask backend
     axios.post('http://localhost:5001/submit-survey', surveyData).then((response) => {
-      alert('Survey submitted successfully!');
+      alert('답변이 저장되었습니다!');
       console.log("response", response);
       // Handle any additional logic or UI updates
     }).catch((error) => {

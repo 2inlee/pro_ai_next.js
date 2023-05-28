@@ -59,9 +59,10 @@ const Expert = ({ finetuneText }) => {
           value={textareaValue}
           onChange={handleTextareaChange}
         />
-        <button type="button" className="btn btn-primary mt-2" onClick={handleEditClick}>
-          Edit
-        </button>
+        <div style={{margin:'10px'}}></div>
+          <button type="button" className="btn btn-primary mt-2" onClick={handleEditClick}>
+            Edit
+          </button>
       </div>
     </div>
   );

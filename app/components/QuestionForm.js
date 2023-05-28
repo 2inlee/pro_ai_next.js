@@ -25,7 +25,7 @@ const QuestionForm = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="question-container container mt-5">
       <h1>Question</h1>
         <form>
           <div className="form-group">
@@ -52,9 +52,10 @@ const QuestionForm = () => {
               }}
             />
           </div>
-          <button type="button" className="btn btn-primary" onClick={submitQuestion}>
-            OK
-          </button>
+          <div style={{margin:'10px'}}></div>
+            <button type="button" className="btn btn-primary" onClick={submitQuestion}>
+              OK
+            </button>
           <div className="form-group mt-3">
             <label htmlFor="answer">Answer:</label>
             <textarea
@@ -72,5 +73,6 @@ const QuestionForm = () => {
     </div>
   );
 };
+
 
 export default QuestionForm;

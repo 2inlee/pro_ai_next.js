@@ -5,3 +5,15 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.header-link {
+  font-size: 17px;
+  padding: 8px;
+  margin: 0 10px;
+  color: #000000;
+}
+
+.header-container {
+  padding-left: 100px;
+  padding-right: 130px;
+}
